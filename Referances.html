@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Technology References</title>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --bg-dark: #f3f4f6;
+            --border: #e5e7eb;
+        }
+        
+        .dark {
+            --primary: #60a5fa;
+            --primary-dark: #3b82f6;
+            --text: #f3f4f6;
+            --text-light: #9ca3af;
+            --bg: #111827;
+            --bg-dark: #1f2937;
+            --border: #374151;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            background-color: var(--bg);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--text);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        nav a:hover {
+            background-color: var(--bg-dark);
+        }
+        
+        .references {
+            flex: 1;
+            padding: 4rem 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .references-container {
+            text-align: center;
+        }
+        
+        .references-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .references-container p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        .reference-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 1rem;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .reference-list li a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 500;
+            background-color: var(--bg-dark);
+            padding: 1rem;
+            border-radius: 0.75rem;
+            display: block;
+            transition: background-color 0.2s;
+        }
+        
+        .reference-list li a:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        footer {
+            background-color: var(--bg-dark);
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .references-container h1 {
+                font-size: 2rem;
+            }
+        
+            nav ul {
+                gap: 0.5rem;
+            }
+        }
+        .grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background-color: var(--bg-dark);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        
+        .card h2 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                gap: 0.5rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+        }
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid white;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255,255,255,0.1);}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">Web<span>Technology 036</span></div>
+            <nav>
+                <ul>
+                    <li><a href="new 2.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+        <button class="theme-toggle">🌓</button>
+    </header>
+
+    <section class="references">
+        <div class="references-container">
+            <h1>Web Technology References</h1>
+            <p>Explore key resources for each web development topic.</p>
+    
+            <div class="grid">
+                <!-- HTML References -->
+                <div class="card">
+                    <h2>HTML</h2>
+                    <ul class="reference-list">
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN HTML Docs</a></li>
+                        <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML</a></li>
+                        <li><a href="https://htmlreference.io/" target="_blank">HTML Reference</a></li>
+                        <li><a href="https://www.freecodecamp.org/learn/responsive-web-design/" target="_blank">FreeCodeCamp HTML</a></li>
+                    </ul>
+                </div>
+    
+                <!-- CSS References -->
+                <div class="card">
+                    <h2>CSS</h2>
+                    <ul class="reference-list">
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN CSS Docs</a></li>
+                        <li><a href="https://www.w3schools.com/css/" target="_blank">W3Schools CSS</a></li>
+                        <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+                        <li><a href="https://web.dev/learn/css/" target="_blank">web.dev CSS</a></li>
+                    </ul>
+                </div>
+    
+                <!-- JavaScript References -->
+                <div class="card">
+                    <h2>JavaScript</h2>
+                    <ul class="reference-list">
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN JavaScript Docs</a></li>
+                        <li><a href="https://www.w3schools.com/js/" target="_blank">W3Schools JavaScript</a></li>
+                        <li><a href="https://javascript.info/" target="_blank">JavaScript Info</a></li>
+                        <li><a href="https://learnjavascript.online/" target="_blank">Learn JavaScript Online</a></li>
+                    </ul>
+                </div>
+    
+                <!-- PHP References -->
+                <div class="card">
+                    <h2>PHP</h2>
+                    <ul class="reference-list">
+                        <li><a href="https://www.php.net/manual/en/index.php" target="_blank">Official PHP Manual</a></li>
+                        <li><a href="https://www.w3schools.com/php/" target="_blank">W3Schools PHP</a></li>
+                        <li><a href="https://www.tutorialspoint.com/php/index.htm" target="_blank">TutorialsPoint PHP</a></li>
+                        <li><a href="https://www.geeksforgeeks.org/php/" target="_blank">GeeksforGeeks PHP</a></li>
+                    </ul>
+                </div>
+    
+                <!-- MySQL References -->
+                <div class="card">
+                    <h2>MySQL</h2>
+                    <ul class="reference-list">
+                        <li><a href="https://dev.mysql.com/doc/" target="_blank">MySQL Documentation</a></li>
+                        <li><a href="https://www.w3schools.com/mysql/" target="_blank">W3Schools MySQL</a></li>
+                        <li><a href="https://www.tutorialspoint.com/mysql/index.htm" target="_blank">TutorialsPoint MySQL</a></li>
+                        <li><a href="https://www.geeksforgeeks.org/mysql-introduction/" target="_blank">GeeksforGeeks MySQL</a></li>
+                    </ul>
+                </div>
+    
+                <!-- XML References -->
+                <div class="card">
+                    <h2>XML</h2>
+                    <ul class="reference-list">
+                        <li><a href="https://www.w3schools.com/xml/" target="_blank">W3Schools XML</a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/XML" target="_blank">MDN XML Docs</a></li>
+                        <li><a href="https://www.tutorialspoint.com/xml/index.htm" target="_blank">TutorialsPoint XML</a></li>
+                        <li><a href="https://www.geeksforgeeks.org/xml-introduction/" target="_blank">GeeksforGeeks XML</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <script>
+            // Theme Toggle Functionality
+            const toggle = document.querySelector('.theme-toggle');
+            toggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark');
+                const isDark = document.body.classList.contains('dark');
+                localStorage.setItem('darkMode', isDark);
+            });
+            
+            // Check for saved theme preference
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark');
+            }
+    
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
+        <p>&copy; 2025 WebTech Resources. All rights reserved.</p>
+    </footer>
+</body>
+</html>

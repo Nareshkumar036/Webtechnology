@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technology 036</title>
+    <style>
+        /* Combined CSS Styles */
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --bg-dark: #f3f4f6;
+            --border: #e5e7eb;
+        }
+
+        .dark {
+            --primary: #60a5fa;
+            --primary-dark: #3b82f6;
+            --text: #f3f4f6;
+            --text-light: #9ca3af;
+            --bg: #111827;
+            --bg-dark: #1f2937;
+            --border: #374151;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: var(--bg);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--text);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+
+        nav a:hover {
+            background-color: var(--bg-dark);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('coding-bg.jpg') center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+            flex: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid white;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex: 1;
+        }
+        
+        .course-card {
+            background-color: var(--bg-dark);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .course-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .course-card p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: var(--bg-dark);
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                gap: 0.5rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">web<span>Technology 036</span></div>
+            <nav>
+                <ul>
+                    <li><a href="new 2.html">Home</a></li>
+                    <li><a href="#notes">Notes</a></li>
+                    <li><a href="#syllabus">Syllabus</a></li>
+                    <li><a href="#lab">Lab Manual</a></li>
+                    <li><a href="#references">References</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle">🌓</button>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>What is Web Technology?</h1>
+            <p>Web Technology refers to the tools, languages, and frameworks used to build and run websites and web applications. It includes everything involved in developing websites—from writing code to managing how information is displayed and interacted with on the web.</p>
+            <div>
+                <a href="#notes" class="btn">Browse Courses</a>
+                <a href="Syllabus.pdf" download="Webtechnology_Syllabus.pdf" class="btn btn-outline">Download Syllabus</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="notes" class="courses">
+        <div class="course-card">
+            <h2>HTML</h2>
+            <p>Learn to structure web pages using semantic HTML elements.</p>
+            <a href="web technology/HTML_ChapterWise_Notes.zip" download class="btn">Download Notes</a>
+        </div>
+        <div class="course-card">
+            <h2>CSS</h2>
+            <p>Style your HTML using modern CSS layouts and animations.</p>
+            <a href="web technology/CSS_ChapterWise_Notes.zip" download class="btn">Download Notes</a>
+        </div>
+        
+        <div class="course-card">
+            <h2>JavaScript</h2>
+            <p>Add interactivity and logic to your websites using JavaScript.</p>
+            <a href="web technology/javascript_tutorial.pdf" download class="btn">Download Notes</a>
+        </div>
+        <div class="course-card">
+            <h2>PHP</h2>
+            <p>Learn server-side scripting with PHP for dynamic web applications.</p>
+            <a href="web technology/php_tutorial.pdf" download class="btn">Download Notes</a>
+        </div>
+        <div class="course-card">
+            <h2>MySQL</h2>
+            <p>Handle databases with MySQL: queries, joins, and CRUD operations.</p>
+            <a href="web technology/mysql-tutorial.pdf" download class="btn">Download Notes</a>
+        </div>
+        <div class="course-card">
+            <h2>XML</h2>
+            <p>It's like HYML you can easily define your own tag.</p>
+            <a href="web technology/xml_tutorial.pdf" download class="btn">Download Notes</a>
+        </div>
+    </section>
+
+    <section id="syllabus" class="courses" style="background-color: var(--bg-dark); padding: 2rem; border-radius: 0.5rem;">
+        <h2 style="text-align: center; margin-bottom: 1.5rem;">Web Technology Syllabus</h2>
+        <p style="text-align: center; margin-bottom: 1.5rem;">Explore the modules covered in the Web Technology course</p>
+        <div style="text-align: center;">
+            <a href="Syllabus.pdf" download="Webtechnology_Syllabus.pdf" class="btn">Download Syllabus PDF</a>
+        </div>
+    </section>
+
+    <section id="lab" class="courses">
+        <div class="course-card">
+            <h2>Lab Manuals</h2>
+            <p>Access all laboratory exercises and practical assignments for Web Technology course.</p>
+            <a href="web technology/web technology lab manual.pdf" download class="btn">Download Notes</a>
+        </div>
+    </section>
+
+    <section id="references" class="courses">
+        <div class="course-card">
+            <h2>References</h2>
+            <p>Additional resources and reference materials for Web Technology.</p>
+            <button onclick="window.location.href='Referances.html'" class="btn">View References</button>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>© 2023 Web Technology 036. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Theme Toggle Functionality
+        const toggle = document.querySelector('.theme-toggle');
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            const isDark = document.body.classList.contains('dark');
+            localStorage.setItem('darkMode', isDark);
+        });
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
